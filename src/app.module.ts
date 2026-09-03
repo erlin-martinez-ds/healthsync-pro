@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import databaseConfig from './config/database.config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { CitasModule } from './citas/citas.module';
 
 @Module({
   imports: [
@@ -27,6 +28,8 @@ import { AppService } from './app.service';
         synchronize: true,
       }),
     }),
+
+    CitasModule,
   ],
   controllers: [AppController],
   providers: [AppService],
