@@ -5,6 +5,8 @@ import databaseConfig from './config/database.config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CitasModule } from './citas/citas.module';
+import { DiagnosticosModule } from './diagnosticos/diagnosticos.module';
+import { PacientesModule } from './pacientes/pacientes.module';
 
 @Module({
   imports: [
@@ -30,6 +32,8 @@ import { CitasModule } from './citas/citas.module';
     }),
 
     CitasModule,
+    PacientesModule,
+    DiagnosticosModule,
   ],
   controllers: [AppController],
   providers: [AppService],
