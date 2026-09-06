@@ -7,7 +7,9 @@ import { AppService } from './app.service';
 import { CitasModule } from './citas/citas.module';
 import { DiagnosticosModule } from './diagnosticos/diagnosticos.module';
 import { PacientesModule } from './pacientes/pacientes.module';
-
+import { MedicosModule } from './medicos/medicos.module';
+import { MedicoEspecialidadModule } from './medico-especialidad/medico-especialidad.module';
+import { EspecialidadesModule } from './especialidades/especialidades.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -34,6 +36,9 @@ import { PacientesModule } from './pacientes/pacientes.module';
     CitasModule,
     PacientesModule,
     DiagnosticosModule,
+    MedicosModule,
+    MedicoEspecialidadModule,
+    EspecialidadesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

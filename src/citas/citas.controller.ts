@@ -27,6 +27,11 @@ export class CitasController {
     return this.citasService.findAll();
   }
 
+  @Get(':id/detalle')
+  findDetalle(@Param('id', ParseIntPipe) id: number) {
+    return this.citasService.findDetalle(id);
+  }
+
   @Get(':id')
   findOne(@Param('id', ParseIntPipe) id: number) {
     return this.citasService.findOne(id);
