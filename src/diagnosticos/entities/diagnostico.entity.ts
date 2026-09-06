@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
   RelationId,
 } from 'typeorm';
-import { Cita } from '../../citas/entities/cita.entity/cita.entity';
+import { Cita } from '../../citas/entities/cita.entity';
 
 @Entity('diagnosticos')
 export class Diagnostico {

@@ -27,13 +27,12 @@ export class EspecialidadesService {
     });
 
     if (especialidadExistente) {
-      throw new ConflictException(
-        'Ya existe una especialidad con ese nombre',
-      );
+      throw new ConflictException('Ya existe una especialidad con ese nombre');
     }
 
-    const especialidad =
-      this.especialidadRepository.create(createEspecialidadDto);
+    const especialidad = this.especialidadRepository.create(
+      createEspecialidadDto,
+    );
 
     return await this.especialidadRepository.save(especialidad);
   }
@@ -48,9 +47,7 @@ export class EspecialidadesService {
     });
 
     if (!especialidad) {
-      throw new NotFoundException(
-        `No existe una especialidad con el ID ${id}`,
-      );
+      throw new NotFoundException(`No existe una especialidad con el ID ${id}`);
     }
 
     return especialidad;
@@ -63,10 +60,9 @@ export class EspecialidadesService {
     const especialidad = await this.findOne(id);
 
     if (updateEspecialidadDto.nombre) {
-      const especialidadExistente =
-        await this.especialidadRepository.findOne({
-          where: { nombre: updateEspecialidadDto.nombre },
-        });
+      const especialidadExistente = await this.especialidadRepository.findOne({
+        where: { nombre: updateEspecialidadDto.nombre },
+      });
 
       if (
         especialidadExistente &&

@@ -18,7 +18,10 @@ export class PacientesService {
   ) {}
 
   async create(createPacienteDto: CreatePacienteDto): Promise<Paciente> {
-    await this.ensureUnique(createPacienteDto.documento, createPacienteDto.correo);
+    await this.ensureUnique(
+      createPacienteDto.documento,
+      createPacienteDto.correo,
+    );
 
     const paciente = this.pacientesRepository.create(createPacienteDto);
     return this.pacientesRepository.save(paciente);
